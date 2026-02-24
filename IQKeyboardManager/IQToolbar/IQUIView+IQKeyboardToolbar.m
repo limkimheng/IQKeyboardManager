@@ -186,7 +186,8 @@ NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
     }
     else if ([self respondsToSelector:@selector(placeholder)])
     {
-        return [(UITextField*)self placeholder];
+        //return [(UITextField*)self placeholder];
+        return [NSString stringWithFormat:@"  %@  ", ((UITextField *)self).placeholder ?: @""];
     }
     else
     {
