@@ -124,8 +124,11 @@ import UIKit
 
         let top = NSLayoutConstraint.init(item: titleButton!, attribute: .top, relatedBy: .equal, toItem: _titleView, attribute: .top, multiplier: 1, constant: 0)
         let bottom = NSLayoutConstraint.init(item: titleButton!, attribute: .bottom, relatedBy: .equal, toItem: _titleView, attribute: .bottom, multiplier: 1, constant: 0)
-        let leading = NSLayoutConstraint.init(item: titleButton!, attribute: .leading, relatedBy: .equal, toItem: _titleView, attribute: .leading, multiplier: 1, constant: 16)
-        let trailing = NSLayoutConstraint.init(item: titleButton!, attribute: .trailing, relatedBy: .equal, toItem: _titleView, attribute: .trailing, multiplier: 1, constant: 16)
+        
+        var padding = 0.0
+        if #available(iOS 26.0, *) { padding = 16 }
+        let leading = NSLayoutConstraint.init(item: titleButton!, attribute: .leading, relatedBy: .equal, toItem: _titleView, attribute: .leading, multiplier: 1, constant: padding)
+        let trailing = NSLayoutConstraint.init(item: titleButton!, attribute: .trailing, relatedBy: .equal, toItem: _titleView, attribute: .trailing, multiplier: 1, constant: -padding)
 
         _titleView?.addConstraints([top, bottom, leading, trailing])
 
