@@ -196,6 +196,9 @@ UIView category methods to add IQToolbar on UIKeyboard.
         if self.shouldHideToolbarPlaceholder {
             return nil
         } else if self.toolbarPlaceholder?.isEmpty == false {
+            if #available(iOS 26.0, *) {
+              return "    \(self.toolbarPlaceholder ?? "")    "
+            }
             return self.toolbarPlaceholder
         } else if let placeholderable: IQPlaceholderable = self as? IQPlaceholderable {
 
@@ -203,7 +206,10 @@ UIView category methods to add IQToolbar on UIKeyboard.
                 !placeholder.isEmpty {
                 return placeholder
             } else if let placeholder = placeholderable.placeholder {
-                return  "  \(placeholder)  "
+                if #available(iOS 26.0, *) {
+                  return "    \(placeholder)    "
+                }
+                return  placeholder
             } else {
                 return nil
             }
