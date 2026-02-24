@@ -203,7 +203,7 @@ UIView category methods to add IQToolbar on UIKeyboard.
                 !placeholder.isEmpty {
                 return placeholder
             } else if let placeholder = placeholderable.placeholder {
-                return placeholder
+                return  "  \(placeholder)  "
             } else {
                 return nil
             }
