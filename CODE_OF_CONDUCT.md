@@ -54,7 +54,7 @@ If a community member engages in unacceptable behavior, the community organizers
 ## 6. Reporting Guidelines
 
 If you are subject to or witness unacceptable behavior, or have any other concerns, please notify a community organizer as soon as possible. 
-hack.iftekhar@gmail.com
+iftekhar@gmail.com.
 
 
 
