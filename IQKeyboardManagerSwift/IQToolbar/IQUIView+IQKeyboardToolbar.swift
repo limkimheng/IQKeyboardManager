@@ -271,7 +271,9 @@ UIView category methods to add IQToolbar on UIKeyboard.
                     prev.tag = toolbar.previousBarButton.tag
                     toolbar.previousBarButton = prev
                 }
-
+                if #available(iOS 26.0, *) {
+                  prev.tintColor = .black
+                }
                 items.append(prev)
             }
 
@@ -308,7 +310,9 @@ UIView category methods to add IQToolbar on UIKeyboard.
                     next.tag = toolbar.nextBarButton.tag
                     toolbar.nextBarButton = next
                 }
-              
+                if #available(iOS 26.0, *) {
+                  next.tintColor = .black
+                }
                 items.append(next)
             }
 
@@ -358,7 +362,9 @@ UIView category methods to add IQToolbar on UIKeyboard.
                     done.tag = toolbar.doneBarButton.tag
                     toolbar.doneBarButton = done
                 }
-
+                if #available(iOS 26.0, *) {
+                  done.tintColor = .black
+                }
                 items.append(done)
             }
 
