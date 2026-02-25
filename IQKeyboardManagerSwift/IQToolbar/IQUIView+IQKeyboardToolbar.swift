@@ -309,9 +309,6 @@ UIView category methods to add IQToolbar on UIKeyboard.
                     toolbar.nextBarButton = next
                 }
               
-                toolbar.backgroundColor = .clear
-                next.tintColor = .clear
-              
                 items.append(next)
             }
 
