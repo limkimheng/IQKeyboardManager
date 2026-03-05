@@ -263,6 +263,9 @@ NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
             prev.tag = toolbar.previousBarButton.tag;
             toolbar.previousBarButton = prev;
         }
+        if ( @available(iOS 26.0,*)) {
+          [prev setTintColor: [UIColor blackColor]];
+        }
         
         [items addObject:prev];
     }
@@ -315,7 +318,9 @@ NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
             next.tag = toolbar.nextBarButton.tag;
             toolbar.nextBarButton = next;
         }
-        
+        if ( @available(iOS 26.0,*)) {
+          [next setTintColor: [UIColor blackColor]];
+        }
         [items addObject:next];
     }
     
@@ -374,6 +379,10 @@ NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
             done.enabled = toolbar.doneBarButton.enabled;
             done.tag = toolbar.doneBarButton.tag;
             toolbar.doneBarButton = done;
+        }
+      
+        if ( @available(iOS 26.0,*)) {
+          [done setTintColor: [UIColor blackColor]];
         }
         
         [items addObject:done];
