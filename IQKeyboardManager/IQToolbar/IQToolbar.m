@@ -135,9 +135,10 @@ NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
 -(CGSize)sizeThatFits:(CGSize)size
 {
     CGSize sizeThatFit = [super sizeThatFits:size];
-
     sizeThatFit.height = 44;
-    
+    if ( @available(iOS 26.0,*)) {
+      sizeThatFit.height = 54;
+    }
     return sizeThatFit;
 }
 
