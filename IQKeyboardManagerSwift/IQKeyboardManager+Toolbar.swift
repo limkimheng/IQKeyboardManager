@@ -93,6 +93,12 @@ public extension IQKeyboardManager {
         }
 
         if shouldHavePreviousNext {
+          
+            if #available(iOS 26.0, *) {
+              shouldShowToolbarPlaceholder = false;
+              let toolbar = textField.keyboardToolbar.titleBarButton
+              toolbar.isHidden = true
+            }
             let prevConfiguration: IQBarButtonItemConfiguration
 
             if let doneBarButtonItemImage = toolbarPreviousBarButtonItemImage {
@@ -131,6 +137,10 @@ public extension IQKeyboardManager {
             }
 
         } else {
+          
+            if #available(iOS 26.0, *) {
+              shouldShowToolbarPlaceholder = true;
+            }
             textField.addKeyboardToolbarWithTarget(target: self, titleText: (shouldShowToolbarPlaceholder ? textField.drawingToolbarPlaceholder: nil), titleAccessibilityLabel: toolbarTitlBarButtonItemAccessibilityLabel, rightBarButtonConfiguration: rightConfiguration, previousBarButtonConfiguration: nil, nextBarButtonConfiguration: nil)
 
             textField.inputAccessoryView?.tag = IQKeyboardManager.kIQDoneButtonToolbarTag //  (Bug ID: #78)
