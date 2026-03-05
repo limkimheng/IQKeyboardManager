@@ -2152,7 +2152,7 @@ NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
                 if ( @available(iOS 26.0,*)) {
                   _shouldShowToolbarPlaceholder = false;
                   IQToolbar *toolbar = textField.keyboardToolbar;
-                  toolbar.titleBarButton.hidden = NO;
+                  toolbar.titleBarButton.hidden = YES;
                 }
                 //Supporting Custom Done button image (Enhancement ID: #366)
                 if (_toolbarPreviousBarButtonItemImage)
@@ -2210,8 +2210,7 @@ NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
             {
               
                 if ( @available(iOS 26.0,*)) {
-                  IQToolbar *toolbar = textField.keyboardToolbar;
-                  toolbar.titleBarButton.hidden = YES;
+                  _shouldShowToolbarPlaceholder = true;
                 }
                 [textField addKeyboardToolbarWithTarget:self titleText:(_shouldShowToolbarPlaceholder ? textField.drawingToolbarPlaceholder : nil) rightBarButtonConfiguration:rightConfiguration previousBarButtonConfiguration:nil nextBarButtonConfiguration:nil];
 
